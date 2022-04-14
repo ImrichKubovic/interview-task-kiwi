@@ -1,0 +1,24 @@
+describe("Kiwi page check - desktop", () => {
+before(() => {
+cy.visit("https://kiwi.com/en/")
+//accept cookies can be done by cy.setCookie
+cy.log("Accept cookies")
+cy.contains("Accept").click()
+})
+it("should check filters", () => {
+cy.get("[data-test=FilterA]").as("modeFilter")
+cy.get("@modeFilter").click()// missing assertion
+cy.get("[data-test=FilterB]").as("baggageFilter")
+cy.get("@baggageFilter").should("exist").click()
+cy.contains("Search").click()
+//missing part that the filters are set correctly and there is appropriate outcome
+})
+it("should be redirected to search/results page", () => {
+//missing a part where we are selecting the flight
+cy.get("[data-test=FlightResults]").should("exist")
+.should("be.visible")
+cy.log("Book button should be on the page")
+cy.contains("Book")/assertion is missing and also click on the book button
+// i would like to add here also checking if we are redirected correctly to the result page.
+})
+})

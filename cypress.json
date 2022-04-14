@@ -1,0 +1,9 @@
+{
+   
+     "env": {
+         "flights_api": "https://api.skypicker.com/flights",
+        "booking_api": "https://www.kiwi.com/en/booking"
+  
+      }
+    }
+  
